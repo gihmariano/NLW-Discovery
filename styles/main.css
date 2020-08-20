@@ -57,6 +57,6 @@ textarea{
     /* box model limite*/
    /* border: 1px solid red; */
     /*preenchimento*/
-   /* padding: 10px 40px 100px; funciona sentido horario
+   /* padding: 10px 40px 100px; funciona sentido horario*/
     box-sizing: border-box;  
 }
