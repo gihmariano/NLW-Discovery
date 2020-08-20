@@ -32,3 +32,26 @@
     width: 100% ;
     /* esta imagem está dentro do container */
 }
+
+.buttons-container {
+    display: flex;
+    justify-content: center;
+    margin: 3.2rem 0;
+    /* distancia de 3.2rem, laterais 0 */
+}
+
+.buttons-container a {
+    width: 30rem;
+    height: 10.4rem;
+
+    border-radius: .8rem;
+    margin-right: 1.6rem;
+
+    font: 700 2.4rem Archivo;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-decoration: none; /*nao fica aquela linha abaixo do link*/
+}
