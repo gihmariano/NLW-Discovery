@@ -66,12 +66,12 @@ const proffys = [   //propriedades, que eu preciso backend, aqui temos um objeto
     }
 
     function pageStudy(req, res) {
-     const filters = req.query
-     return res.render("study.html",{ proffys, filters, subjects })
+     const filters = req.query //req.query - estou recebendo dados
+     return res.render("study.html",{ proffys, filters, subjects, weekdays })
     }
 
     function pageGiveClasses(req, res) {
-    return res.render("give-classes.html") 
+    return res.render("give-classes.html", {subjects, weekdays}) 
     }
      //servidor
     const express = require('express')
