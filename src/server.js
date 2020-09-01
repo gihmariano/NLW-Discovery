@@ -61,6 +61,13 @@ const proffys = [   //propriedades, que eu preciso backend, aqui temos um objeto
    ]
 
    //organizar melhor os dados aqui
+
+   function getSubjects(subjectNumber){
+       const arrayPosition = +subjectNumber - 1
+       return subjects[arrayPosition]
+   }
+
+
    function pageLanding(req, res) {
     return res.render("index.html")
     }
@@ -71,6 +78,18 @@ const proffys = [   //propriedades, que eu preciso backend, aqui temos um objeto
     }
 
     function pageGiveClasses(req, res) {
+      const data = req.query 
+
+      const isNotEmpty = Object.keys(data).length > 0
+      //adicionar dados a lista de proffys
+      //se tiver dados adicionar se não, n~çao adicionar
+      if (isNotEmpty) {
+          
+        data.subject = getSubjects(data.subject)
+        proffys.push(data)   //push de dados
+        return res.redirect("/study")
+      }
+      // se não
     return res.render("give-classes.html", {subjects, weekdays}) 
     }
      //servidor
