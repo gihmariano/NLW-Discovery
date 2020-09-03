@@ -4,7 +4,7 @@ const createProffy = require('./createProffy')
 
 
 
-Database.then((db) => {
+Database.then(async (db) => {
    //inserir dados
    proffyValue = {
      name: "Diego Fernandes",
@@ -12,13 +12,14 @@ Database.then((db) => {
      whatsapp: "1185464356",
      bio: "Entusiasta das melhores tecnologias de química avançada.<br><br>Apaixonado por explodir coisas em laboratório e por mudar a vida das pessoas através de experiencias.Mais de 200.000 pessoas já passaram por uma das explosões",
    }
-
+       //o proffy id virá pelo banco de dados
    classValue = {
-    subject: "Química",
-    cost: "20" //o proffy id virá pelo banco de dados
+    subject: 'Química',
+    cost: '20',
    }
 
-   classScheduleValue = [ //o class_id virá pelo banco de dados
+   //o class_id virá pelo banco de dados
+   classScheduleValues = [ 
        {
            weekday: 1, //aqui o zero é Domingo
            time_from: 720, //tempo será transformado em segundos
@@ -30,8 +31,8 @@ Database.then((db) => {
            time_to: 1220 //tranformado em segundos
        }
    ]
-
-   //createProffy(db, {proffyValue, classValue, classScheduleValue})
+   //tudo num array
+   await createProffy(db, {proffyValue, classValue, classScheduleValues})
 
    //consultar dados inseridos
 })
