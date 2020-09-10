@@ -1,7 +1,7 @@
 //funcionalidade do botao +novohorario
 // ->procurar o botão
-document.querySelector('#add-time')
-.addEventListener('click',cloneField) //quando clicar no botão(click, ação)
+document.querySelector("#add-time")
+.addEventListener("click",cloneField) //quando clicar no botão(click, ação)
 //-> quando clicar no botão 
 //-> vai executar a ação de duplicar os campos
 function cloneField() {  //duplicar campor e colocar na pagina
@@ -15,7 +15,7 @@ function cloneField() {  //duplicar campor e colocar na pagina
         //pegar field do momento e limpa ele
         field.value = ""
 
-    })
+    });
 
 
     //-> e colocar na página e onde?*/

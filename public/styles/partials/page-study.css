@@ -116,11 +116,6 @@
     width: 90%;
 }
 
-#page-study main .no-results {
-    max-width: 30rem;
-    margin: 12rem auto;
-    text-align: center;
-}
 
 .teacher-item{
     background-color:var(--color-box-base);
@@ -209,6 +204,12 @@
  .teacher-item footer button:hover{
      background: var(--color-secondary-dark);
  }
+
+ #page-study main .no-results {
+    max-width: 30rem;
+    margin: 12rem auto;
+    text-align: center;
+  }
     /* esse é o plano pra desktop*/
     @media(min-width:700px){
          #page-study #container{

@@ -67,7 +67,6 @@
       </div>
      </header>
      <main>
-
        {% if proffys == "" %}         
          <p class="no-results">Nenhum professor encontrado na sua busca.</p> 
        {% else %}
@@ -75,9 +74,7 @@
           {%for proffy in proffys %}
            <article class="teacher-item">
         <header>
-          <img 
-          src="{{proffy.avatar}}"
-          alt="{{proffy.name}}">
+          <img src="{{proffy.avatar}}" alt="{{proffy.name}}">
           <div>
             <strong> {{proffy.name}}</strong>
           <span>{{proffy.subject}}</span></div>

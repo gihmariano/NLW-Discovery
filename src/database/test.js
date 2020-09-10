@@ -14,8 +14,8 @@ Database.then(async (db) => {
    }
        //o proffy id virá pelo banco de dados
    classValue = {
-    subject: 'Química',
-    cost: '20',
+    subject: 1,
+    cost: "20",
    }
 
    //o class_id virá pelo banco de dados
@@ -62,6 +62,6 @@ Database.then(async (db) => {
 
         `)
        
-        console.log(selectClassesSchedules)
+        //console.log(selectClassesSchedules)
 
 })
