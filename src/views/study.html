@@ -67,9 +67,13 @@
       </div>
      </header>
      <main>
+
+       {% if proffys == "" %}         
+         <p class="no-results">Nenhum professor encontrado na sua busca.</p> 
+       {% else %}
        <!-- estrutura for nunjucks - para cada proffy imprimir 1 proffys-->
-       {%for proffy in proffys %}
-       <article class="teacher-item">
+          {%for proffy in proffys %}
+           <article class="teacher-item">
         <header>
           <img 
           src="{{proffy.avatar}}"
@@ -86,10 +90,11 @@
             <img src="/images/icons/whatsapp.svg" alt="Whatsapp">Entrar em contato
          </a>
        </footer>
-      </article>
-       {%endfor%}
-       <!-- conteudo principal pagina -->       
+           </article>
+         {%endfor%}
 
+       {% endif %}
+       <!-- conteudo principal pagina -->       
        <!-- <article class="teacher-item">
         <header>
           <img src="https://avatars1.githubusercontent.com/u/9097132?s=460&u=d0793ebbde0fa8170e7b4603b94a3156ef28e901&v=4"
@@ -108,7 +113,7 @@
          </button>
        </footer>
       </article> -->
-
+           
      </main>
     </div>    
   </body>

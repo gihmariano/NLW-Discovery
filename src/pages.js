@@ -3,7 +3,7 @@
 //dados
 const Database = require ('./database/db')
 
-const {subjects, weekdays, getSubjects} = require ('./utils/format')
+const {subjects, weekdays, getSubjects, convertHoursToMinutes} = require ('./utils/format')
 //const { proffys } = require ('./database/fake_data')
 
 function pageLanding(req, res) {
@@ -14,7 +14,7 @@ function pageLanding(req, res) {
   const filters = req.query //req.query - estou recebendo dados
 
   if(filters.subject || !filters.weekday || !filters.time){ //como esta no html
-    return res.render("study.html",{ filters, subjects, weekdays })
+    return res.render("study.html", { filters, subjects, weekdays })
 
   } 
    //converter horas - chamar função
@@ -28,7 +28,7 @@ function pageLanding(req, res) {
         SELECT class_schedule.*
         FROM class_schedule
         WHERE class_schedule.class_id = classes.id 
-        AND class_schedule.weekday = ${ filters.weekday}
+        AND class_schedule.weekday = ${filters.weekday}
         AND class_schedule.time_from <= ${timeToMinutes}
         AND class_schedule.time_to > ${timeToMinutes}
     )

@@ -28,12 +28,10 @@
        return subjects[arrayPosition]
    }
   //converter horas em  minutos
-  function convertHoursToMinute(time){
+  function convertHoursToMinutes(time){
       const [hour,minutes] = time.split(":")
       return Number((hour * 60) + minutes)    
   }
-
-
 
    module.exports = {
        subjects,
